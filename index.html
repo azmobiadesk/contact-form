@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Contact Form</title>
+</head>
+<body class="bg-[#2d4456] flex justify-center items-center min-h-screen p-4">
+  <div class="bg-white w-full max-w-md p-6 rounded-xl shadow-lg">
+    <h2 class="text-2xl font-semibold text-[#d94a4a] mb-4">Contact Us</h2>
+
+    <form id="contactForm" class="space-y-3">
+      <div>
+        <label class="block text-sm text-gray-700">Name</label>
+        <input type="text" required class="w-full border rounded p-2 focus:outline-[#d94a4a]">
+      </div>
+
+      <div>
+        <label class="block text-sm text-gray-700">Email</label>
+        <input type="email" required class="w-full border rounded p-2 focus:outline-[#d94a4a]">
+      </div>
+
+      <div>
+        <label class="block text-sm text-gray-700">Message</label>
+        <textarea required class="w-full border rounded p-2 h-24 focus:outline-[#d94a4a]"></textarea>
+      </div>
+
+      <button type="submit" class="w-full bg-[#d94a4a] text-white py-2 rounded hover:bg-[#b73737]">
+        Submit
+      </button>
+    </form>
+
+    <p id="successMsg" class="hidden text-green-600 font-semibold mt-4">
+      ✔ Thank you! Your message has been received.
+    </p>
+  </div>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      document.getElementById("successMsg").classList.remove("hidden");
+      this.reset();
+    });
+  </script>
+</body>
+</html>
